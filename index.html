@@ -40,15 +40,19 @@
     document.onkeyup = function(event)  {
 
         var userGuess = event.key
-        var computerGuess = computerChoices[Math.floor(Math.random() * computerGuess.length)];
-
+        var computers = computerGuess[Math.floor(Math.random() * computerGuess.length)];
+        console.log (computers);
       if ((userGuess)){
 
-          if ((userGuess === computerGuess[i])) { 
+          if ((userGuess === computers)) { 
               wins++;
 
-        } else if (userGuess !== computerGuess[i]) {
-            lossess++;
+        } else if (userGuess !== computers) {
+
+          for (i = 9; i > 0; i--)
+          
+            losses++;
+
         }
       }
 
