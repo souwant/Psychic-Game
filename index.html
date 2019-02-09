@@ -37,32 +37,43 @@
 
 
 
-    document.onkeyup = function(event)  {
+    document.onkeyup = function(event) {
 
-        var userGuess = event.key
-        var computers = computerGuess[Math.floor(Math.random() * computerGuess.length)];
-        console.log (computers);
-      if ((userGuess)){
+      var userGuess = event.key
+      var computerSelect = computerGuess[Math.floor(Math.random() * computerGuess.length)];
+      console.log (computerSelect);
 
-          if ((userGuess === computers)) { 
-              wins++;
-
-        } else if (userGuess !== computers) {
-
-          for (i = 9; i > 0; i--)
-          
-            losses++;
-
-        }
+      if(userGuess === computerSelect) { 
+        wins++;
+      } 
+      else if(userGuess !== computerSelect) {
+        losses++;
       }
 
-      userGuess.textContent = "Your Guess:" + userGuess;
-      winsText.textContent = "wins:" + wins;
-      lossesText.textContent = "losses:" + losses;
-      numGuess.textContent = "Guess Left" + numGuess;
+      GuessLeft--;
+      console.log(GuessLeft);
+      updateDisplay();
 
-
+      if(GuessLeft === 0){
+        //alert//
+        //reset the game//
+      }         
     }
+
+    function updateDisplay() {
+      numGuess.textContent = "Guess Left: " + GuessLeft;
+    }
+    
+
+    //fucntion reset()//
+
+    userGuess.textContent = "Your Guess:" + userGuess;
+    winsText.textContent = "wins:" + wins;
+    lossesText.textContent = "losses:" + losses;
+    numGuess.textContent = "Guess Lef: " + GuessLeft;
+
+
+    
 
 
 </script>
