@@ -41,6 +41,7 @@
 
       var userGuess = event.key
       var computerSelect = computerGuess[Math.floor(Math.random() * computerGuess.length)];
+
       console.log (computerSelect);
 
       if(userGuess === computerSelect) { 
@@ -51,12 +52,14 @@
       }
 
       GuessLeft--;
+
       console.log(GuessLeft);
       updateDisplay();
 
       if(GuessLeft === 0){
-        //alert//
-        //reset the game//
+        
+        alert ("You Lose")
+ 
       }         
     }
 
@@ -64,8 +67,9 @@
       numGuess.textContent = "Guess Left: " + GuessLeft;
     }
     
-
-    //fucntion reset()//
+    
+    
+    
 
     userGuess.textContent = "Your Guess:" + userGuess;
     winsText.textContent = "wins:" + wins;
